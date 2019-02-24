@@ -1,7 +1,7 @@
 {
   "name": "framer-sync",
   "version": "0.0.1",
-  "description": "Synchronize your project's production components with Framer X projects",
+  "description": "Synchronize your production React components with Framer X",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,15 +10,14 @@
     "framer",
     "framerx",
     "build",
-    "sync"
+    "react"
   ],
   "author": "Sam Jesso",
   "license": "MIT",
   "dependencies": {
-    "@babel/parser": "^7.3.3",
-    "babel-preset-react-app": "^7.0.1",
-    "commander": "^2.19.0",
-    "create-react-library": "^2.6.7",
-    "uuid": "^3.3.2"
+    "@babel/parser": "7.3.3",
+    "commander": "2.19.0",
+    "create-react-library": "2.6.7",
+    "uuid": "3.3.2"
   }
 }

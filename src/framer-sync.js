@@ -24,7 +24,6 @@ async function main(projectDirectory, framerFilePath) {
 
   // Run create-react-library to create an empty library to copy our files into.
   console.log(`Creating a temporary library at ${libraryName}`);
-  // TODO depend on a concrete version of create-react-library instead of using npx for better reliability.
   await shell.exec('./node_modules/create-react-library/index.js', '--skip-prompts', '--no-git', libraryName);
 
   // Update the temporary library package.json.
