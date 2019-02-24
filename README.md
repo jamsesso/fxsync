@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/jamsesso/fxsync/master/fxsync.png" alt="fxsync" />
 </p>
 
-**fxsync** is a bundler allows you to import React components from your existing projects into a Framer X file without changes to your existing code.
+**fxsync** is a bundler that allows you to import React components from your existing projects into a Framer X file without changes to your existing code.
 
 ## Installation
 
@@ -18,7 +18,7 @@ npm install -g fxsync
 
 First, create a `.framerx` file that you want to inject your project's components into.
 
-Next, In your npm project, annotate each component file you want to inject to your Framer X design with a pragma. For example:
+Next, In your npm project, annotate each component file you want to inject into your Framer X design with the `@framerx <component name>` pragma. For example:
 
 ```js
 /** @framerx MyProductionButton */
@@ -31,7 +31,7 @@ function Button({children, onClick}) {
 export default Button;
 ```
 
-**Important:** The name in the `@framerx` pragma does not need to match the component name, but it must be a valid JSX identifier. Your component must also be the default export in the file.
+**Important:** The component name in the `@framerx` pragma does not need to match the component name defined in the file, but it must be a valid JSX identifier. Your component must also be the default export in the file.
 
 The name you specify in the pragma is the name that the component will have inside your Framer X design file (in this case it is `MyProductionButton`; see line 1 of the previous example).
 
