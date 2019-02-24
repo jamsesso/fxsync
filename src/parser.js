@@ -28,25 +28,37 @@ function getDependencies(file) {
   }
 
   return ast.program.body
-      .filter(node => node.type === 'ImportDeclaration')
-      .filter(node => node.source.value.startsWith('.'))
-      .map(node => {
-        let dependencyPath = path.join(path.dirname(file), node.source.value + '.js');
+    .filter(node => node.type === 'ImportDeclaration')
+    .filter(node => node.source.value.startsWith('.'))
+    .map(node => {
+      let dependencyPath = path.join(path.dirname(file), node.source.value);
 
-        if (!fs.existsSync(dependencyPath)) {
-          dependencyPath = path.join(path.dirname(file), node.source.value, 'index.js');
+      if (fs.existsSync(dependencyPath)) {
+        const stat = fs.statSync(dependencyPath);
+
+        if (!stat.isFile()) {
+          dependencyPath = path.join(path.dirname(file), `${node.source.value}.js`);
         }
+      }
 
-        if (!fs.existsSync(dependencyPath)) {
-          return null;
-        }
+      if (!fs.existsSync(dependencyPath)) {
+        dependencyPath = path.join(path.dirname(file), `${node.source.value}.js`);
+      }
 
-        return {
-          path: dependencyPath,
-          dependencies: getDependencies(dependencyPath)
-        };
-      })
-      .filter(Boolean);
+      if (!fs.existsSync(dependencyPath)) {
+        dependencyPath = path.join(path.dirname(file), node.source.value, 'index.js');
+      }
+
+      if (!fs.existsSync(dependencyPath)) {
+        return null;
+      }
+
+      return {
+        path: dependencyPath,
+        dependencies: getDependencies(dependencyPath)
+      };
+    })
+    .filter(Boolean);
 }
 
 function getFramerMetadata(file) {

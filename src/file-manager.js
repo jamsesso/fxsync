@@ -53,7 +53,7 @@ function getProject(directory) {
 
   return {
     ...packageJson,
-    files: findFiles(directory, file => !file.startsWith('.') && file.endsWith('.js'))
+    files: findFiles(directory, file => !file.startsWith('.'))
   };
 }
 

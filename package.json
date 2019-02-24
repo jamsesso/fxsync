@@ -2,6 +2,7 @@
   "name": "fxsync",
   "version": "0.0.1",
   "description": "Synchronize your production React components with Framer X",
+  "repository": "github:jamsesso/fxsync",
   "main": "./src/fxsync.js",
   "bin": {
     "fxsync": "./index.js"
@@ -20,7 +21,6 @@
   "dependencies": {
     "@babel/parser": "7.3.3",
     "commander": "2.19.0",
-    "create-react-library": "2.6.7",
     "uuid": "3.3.2"
   }
 }

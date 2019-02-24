@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require('fs');
 const uuid = require('uuid/v4');
 
@@ -6,6 +7,9 @@ const fileManager = require('./file-manager');
 const shell = require('./shell');
 
 async function main(projectDirectory, framerFilePath) {
+  projectDirectory = path.resolve(projectDirectory);
+  framerFilePath = path.resolve(framerFilePath);
+
   // Make sure the requisite files exist before continuing.
   if (!fs.existsSync(projectDirectory)) {
     throw new Error(`Project directory does not exist: ${projectDirectory}`);
@@ -24,7 +28,7 @@ async function main(projectDirectory, framerFilePath) {
 
   // Run create-react-library to create an empty library to copy our files into.
   console.log(`Creating a temporary library at ${libraryName}`);
-  await shell.exec('./node_modules/create-react-library/index.js', '--skip-prompts', '--no-git', libraryName);
+  await shell.exec('npx', 'create-react-library@2.6.7', '--skip-prompts', '--no-git', libraryName);
 
   // Update the temporary library package.json.
   console.log(`Copying dependencies from ${projectDirectory}/package.json`);
