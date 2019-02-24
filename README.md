@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/jamsesso/fxsync/master/fxsync.png" alt="FXSync" />
+  <img src="https://raw.githubusercontent.com/jamsesso/fxsync/master/fxsync.png" alt="fxsync" />
 </p>
-<h1 align="center">fxsync</h1>
 
 **fxsync** is a bundler allows you to import React components from your existing projects into a Framer X file without changes to your existing code.
 
