@@ -1,8 +1,11 @@
 {
-  "name": "framer-sync",
+  "name": "fxsync",
   "version": "0.0.1",
   "description": "Synchronize your production React components with Framer X",
-  "main": "index.js",
+  "main": "./src/fxsync.js",
+  "bin": {
+    "fxsync": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -83,7 +83,7 @@ async function main(projectDirectory, framerFilePath) {
 
   // Move the JS artifact file into the framer file.
   console.log('Copying the build artifact');
-  fileManager.move(`./${libraryName}/dist/index.js`, `./${openFramerFile}/code/lib/${project.name}.js`);
+  fileManager.move(`./${libraryName}/dist/index.js`, `./${openFramerFile}/code/fxsync/${project.name}.js`);
 
   // Re-zip the framer file.
   console.log('Closing the framer design file');
