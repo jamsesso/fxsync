@@ -7,7 +7,7 @@
 ## Installation
 
 ```sh
-npm install -g fxsync
+npm install -g @jamsesso/fxsync
 ```
 
 **Important:** Node.js >= 10.12.0 is required!

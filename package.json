@@ -1,5 +1,5 @@
 {
-  "name": "fxsync",
+  "name": "@jamsesso/fxsync",
   "version": "0.0.1",
   "description": "Synchronize your production React components with Framer X",
   "repository": "github:jamsesso/fxsync",
