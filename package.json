@@ -1,6 +1,6 @@
 {
   "name": "@jamsesso/fxsync",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Synchronize your production React components with Framer X",
   "repository": "github:jamsesso/fxsync",
   "main": "./src/fxsync.js",
